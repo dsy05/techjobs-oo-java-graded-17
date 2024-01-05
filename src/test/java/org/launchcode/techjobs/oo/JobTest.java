@@ -42,7 +42,7 @@ public class JobTest {
     @Test
     public void testJobsForEquality() {
         String msg = "Test two Job objects using full constructor that have identical fields except for ID return false for equals";
-        assertNotEquals(msg,true, equalityJob1.getId() == equalityJob2.getId());
+        assertNotEquals(msg,true, equalityJob1.equals(equalityJob2));
 
     }
 
