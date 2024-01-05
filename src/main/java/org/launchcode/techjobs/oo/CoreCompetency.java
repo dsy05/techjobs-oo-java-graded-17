@@ -9,7 +9,7 @@ public class CoreCompetency {
     private String value;
 
     public CoreCompetency() {
-        this.id = nextId;
+        id = nextId;
         nextId++;
     }
 
