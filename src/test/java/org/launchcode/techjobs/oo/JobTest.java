@@ -2,6 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
 
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -45,5 +46,47 @@ public class JobTest {
         assertNotEquals(msg,true, equalityJob1.equals(equalityJob2));
 
     }
+
+    Job testJobToString = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        String msg = "ToString begins and ends with newline";
+        String firstChar = testJobToString.toString().substring(0,2);
+        String lastChar = testJobToString.toString().substring(testJobToString.toString().length()-2);
+        assertEquals(msg, firstChar, lineSeparator());
+        assertEquals(msg, lastChar, lineSeparator());
+
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        String msg = "ToString contains correct labels and data";
+        String newLine = System.lineSeparator();
+        assertEquals(msg, newLine+
+                        "ID: " + testJobToString.getId() + newLine +
+                        "Name: " + testJobToString.getName() + newLine +
+                        "Employer: " + testJobToString.getEmployer() + newLine +
+                        "Location: " + testJobToString.getLocation() + newLine +
+                        "Position Type: " + testJobToString.getPositionType() + newLine +
+                        "Core Competency: "+ testJobToString.getCoreCompetency() + newLine, testJobToString.toString());
+    }
+
+    Job testJobToStringFieldMissing = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        String msg = "If field is empty toString contains message 'Data not available'";
+        String newLine = System.lineSeparator();
+        assertEquals(msg, newLine+
+                "ID: " + testJobToStringFieldMissing.getId() + newLine +
+                "Name: " + testJobToStringFieldMissing.getName() + newLine +
+                "Employer: Data not available" + newLine +
+                "Location: " + testJobToStringFieldMissing.getLocation() + newLine +
+                "Position Type: Data not available" + newLine +
+                "Core Competency: "+ testJobToStringFieldMissing.getCoreCompetency() + newLine, testJobToStringFieldMissing.toString());
+
+    }
+
 
 }

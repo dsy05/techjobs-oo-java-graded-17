@@ -98,4 +98,51 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
+
+    @Override
+    public String toString() {
+        String newLine = System.lineSeparator();
+        String printName = getName();
+//        String printEmployer = getEmployer().getValue();
+//        String printLocation = getLocation().getValue();
+//        String printPositionType = getPositionType().getValue();
+//        String printCoreCompetency = getCoreCompetency().getValue();
+        if (getName().trim().isEmpty() || getName() == null) {
+            printName = "Data not available";
+        }
+        if (getEmployer().getValue().trim().isEmpty() || getEmployer() == null) {
+            getEmployer().setValue("Data not available");
+        }
+        if (getLocation().getValue().trim().isEmpty() || getLocation() == null) {
+            getLocation().setValue("Data not available");
+        }
+        if (getPositionType().getValue().trim().isEmpty() || getPositionType() == null) {
+            getPositionType().setValue("Data not available"); ;
+        }
+        if (getCoreCompetency().getValue().trim().isEmpty() || getCoreCompetency() == null) {
+            getCoreCompetency().setValue("Data not available");
+        }
+
+        return
+                newLine +
+                "ID: " + getId() + newLine +
+                "Name: " + printName + newLine +
+                "Employer: " + getEmployer() + newLine +
+                "Location: " + getLocation() + newLine +
+                "Position Type: " + getPositionType() + newLine +
+                "Core Competency: " + getCoreCompetency() + newLine
+//                "\n" +
+//                "ID: " + getId() + "\n" +
+//                "Name: " + getName() + "\n" +
+//                "Employer: " + getEmployer() + "\n" +
+//                "Location: " + getLocation() + "\n" +
+//                "Position Type: " + getPositionType() + "\n" +
+//                "Core Competency: " + getCoreCompetency() + "\n"
+               ;
+    }
+
+
+
 }
