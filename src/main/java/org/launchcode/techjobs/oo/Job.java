@@ -109,19 +109,19 @@ public class Job {
 //        String printLocation = getLocation().getValue();
 //        String printPositionType = getPositionType().getValue();
 //        String printCoreCompetency = getCoreCompetency().getValue();
-        if (getName().trim().isEmpty() || getName() == null) {
+        if (getName() == null || getName().trim().isEmpty()) {
             printName = "Data not available";
         }
-        if (getEmployer().getValue().trim().isEmpty() || getEmployer() == null) {
+        if (getName() == null || getEmployer().getValue().trim().isEmpty()) {
             getEmployer().setValue("Data not available");
         }
-        if (getLocation().getValue().trim().isEmpty() || getLocation() == null) {
+        if (getName() == null || getLocation().getValue().trim().isEmpty()) {
             getLocation().setValue("Data not available");
         }
-        if (getPositionType().getValue().trim().isEmpty() || getPositionType() == null) {
+        if (getName() == null || getPositionType().getValue().trim().isEmpty()) {
             getPositionType().setValue("Data not available"); ;
         }
-        if (getCoreCompetency().getValue().trim().isEmpty() || getCoreCompetency() == null) {
+        if (getName() == null || getCoreCompetency().getValue().trim().isEmpty()) {
             getCoreCompetency().setValue("Data not available");
         }
 
