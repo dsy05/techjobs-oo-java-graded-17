@@ -112,21 +112,20 @@ public class Job {
         if (getName() == null || getName().trim().isEmpty()) {
             printName = "Data not available";
         }
-        if (getName() == null || getEmployer().getValue().trim().isEmpty()) {
+        if (getEmployer() == null || getEmployer().getValue().trim().isEmpty()) {
             getEmployer().setValue("Data not available");
         }
-        if (getName() == null || getLocation().getValue().trim().isEmpty()) {
+        if (getLocation() == null || getLocation().getValue().trim().isEmpty()) {
             getLocation().setValue("Data not available");
         }
-        if (getName() == null || getPositionType().getValue().trim().isEmpty()) {
+        if (getPositionType() == null || getPositionType().getValue().trim().isEmpty()) {
             getPositionType().setValue("Data not available"); ;
         }
-        if (getName() == null || getCoreCompetency().getValue().trim().isEmpty()) {
+        if (getCoreCompetency() == null || getCoreCompetency().getValue().trim().isEmpty()) {
             getCoreCompetency().setValue("Data not available");
         }
 
-        return
-                newLine +
+        return newLine +
                 "ID: " + getId() + newLine +
                 "Name: " + printName + newLine +
                 "Employer: " + getEmployer() + newLine +
